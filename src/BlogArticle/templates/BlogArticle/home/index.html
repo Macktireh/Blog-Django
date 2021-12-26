@@ -1,0 +1,67 @@
+{% extends 'BlogArticle/base/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'BlogArticle/css/base/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'BlogArticle/css/home/style.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+  <main>
+    <section class="section-1">
+      <h1>Super Tech</h1>
+      <h3>Apprendre python en lisant les articles des Super Tech</h3>
+      <a href="#" class="btn-list-article">Voir la liste des articles</a>
+    </section>
+
+    <section class="section-2">
+      {% for article in object_list %}
+        <div class="container-article">
+          <div class="box-img-article">
+            <!-- bla -->
+            <img class="img-article" src="{{ article.image.url }}" alt="image article {{ article.id }}">
+          </div>
+          <div class="intro-article">
+            <h2>{{ article.title }}</h2>
+            <h5>{{ article.date_added }}</h5>
+            <p class="text-intro">{{ article.intro }}</p>
+            <a href="article/{{ article.slug }}" class="voirplus">Voir plus</a>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+    
+
+  </main>
+
+    <div class="pagination">
+    <nav>
+      {% if is_paginated %}
+        <ul class="ul-pagination">
+
+          {% if page_obj.has_previous %}
+            <li><a href="{% url 'home' %}?page={{ page_obj.previous_page_number }}">
+                < </a>
+            </li>
+          {% endif %}
+
+            <li><a href="#" style="background-color: #ef2d56">{{ page_obj.number }}</a></li>
+
+          {% if page_obj.has_next %}
+            <li><a href="{% url 'home' %}?page={{ page_obj.next_page_number }}">></a></li>
+          {% endif %}
+
+        </ul>
+      {% endif %}
+    </nav>
+  </div>
+
+{% endblock %}
+
+
+
+{% block js %}
+<script type="text/javascript" src="{% static 'BlogArticle/js/index.js' %}"></script>
+{% endblock %}

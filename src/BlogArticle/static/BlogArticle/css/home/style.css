@@ -1,0 +1,168 @@
+:root {
+  --color1: #ddd;
+  --color2: #121313;
+  --color3: #ef2d56;
+  --color4: #222e50;
+  --color5: rgb(117, 116, 116);
+}
+
+.section-1 {
+  background: url(../../img/bg.jpg) no-repeat fixed center/cover;
+  color: var(--color1);
+  padding: 2rem;
+  text-align: center;
+}
+
+h3 {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.btn-list-article {
+  background-color: var(--color4);
+  text-decoration: none;
+  color: var(--color1);
+  padding: 0.8rem;
+  margin: 4rem;
+  border-radius: 8px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.btn-list-article:hover {
+  background-color: var(--color3);
+  transition: 0.3s;
+}
+
+.section-2 {
+  margin: 25px auto;
+  width: 1300px;
+  padding-top: 0.5rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.container-article {
+  display: grid;
+  grid-template-rows: auto auto;
+  box-shadow: 0 0 2px var(--color5);
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin: 0.5rem;
+}
+
+.box-img-article {
+  height: 250px;
+  /*width: 280px;*/
+}
+
+.img-article {
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+}
+
+.intro-article {
+  margin-top: 0.5rem;
+  color: var(--color2);
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.intro-article h2, .intro-article p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.intro-article h5,
+.intro-article p {
+  margin: 0.5em 0;
+}
+
+.text-intro {
+  text-align: justify;
+  margin: 0.5em 0;
+}
+
+.voirplus {
+  background-color: var(--color4);
+  text-decoration: none;
+  color: var(--color1);
+  padding: 0.4rem;
+  margin: 4rem;
+  border-radius: 8px;
+  transition: 0.3s;
+  /* cursor: pointer;
+  position: absolute;
+  top: 15px; */
+}
+
+.voirplus:hover {
+  background-color: var(--color3);
+  transition: 0.3s;
+}
+
+.pagination {
+  padding: 2rem;
+}
+
+.ul-pagination {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ul-pagination li {
+  display: inline;
+  position: relative;
+  /*padding: 1rem;*/
+  margin: 0.2rem;
+  
+}
+
+.ul-pagination a {
+  background-color: var(--color4);
+  color: var(--color1);
+  text-align: center;
+  text-decoration: none;
+  padding: 1rem;
+  cursor: pointer;
+  transition: 0.4s;
+  border-radius: 8px;
+}
+
+.ul-pagination a:hover {
+  background-color: var(--color3);
+  transition: 0.2s;
+}
+
+@media screen and (max-width: 1350px) {
+  .section-2 {
+    width: 1000px;
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .section-2 {
+    width: 700px;
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .section-2 {
+    width: 600px;
+    grid-template-columns: auto;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .section-2 {
+    width: 500px;
+    grid-template-columns: auto;
+  }
+}

@@ -1,0 +1,72 @@
+{% extends 'BlogArticle/base/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'BlogArticle/css/base/style.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'BlogArticle/css/article/style.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+  <main>
+    <section class="section-1">
+      <h1>Super Tech</h1>
+      <h3>Apprendre python en lisant les articles des Super Tech</h3>
+      <a href="#" class="btn-list-article">s'abonner</a>
+    </section>
+
+    <section class="section-2">
+      <!-- <img src="./assets/profil.jpg" alt="Profil" srcset=""> -->
+      <h2>{{ article.title }}</h2>
+      <h5>{{ article.date_added }}</h5>
+      <div class="text">
+        <p>{{ article.body }}</p>
+      </div>
+    </section>
+
+    <section class="section-3">
+      <h3>Commentaires</h3>
+
+      {% for comment in comments %}
+        <div class="comment">
+          <h4><span>{{ comment.name }} </span>{{ comment.date_added }}</h4>
+          <p>{{ comment.body }}</p>
+        {% empty %}
+          <p>Pas de commentaire</p>
+        </div>
+      {% endfor %}
+
+      <div class="box-form">
+        <form action="">
+          {% csrf_token %}
+
+          {{ form.as_p }}
+          <!-- <div class="input-nom"> -->
+          <!-- <label for="nom">nom</label> -->
+          <!-- <input type="text" name="inputnom" class="inputnon" placeholder="Nom"> -->
+          <!-- </div> -->
+
+          <!-- <div class="input-email"> -->
+          <!-- <label for="email">email</label> -->
+          <!-- <input type="email" name="inputemail" class="inputemail" placeholder="Email"> -->
+          <!-- </div> -->
+
+          <!-- <div class="input-text"> -->
+          <!-- <label for="text">text</label> -->
+          <!-- <textarea class="inputtext" cols="200" rows="50"></textarea> -->
+          <!-- </div> -->
+
+          <input type="submit" value="ajouter">
+        </form>
+      </div>
+    </section>
+  </main>
+{% endblock %}
+
+
+
+{% block js %}
+<script type="text/javascript" src="{% static 'BlogArticle/js/index.js' %}"></script>
+{% endblock %}
