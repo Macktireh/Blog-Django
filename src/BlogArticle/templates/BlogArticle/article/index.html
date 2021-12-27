@@ -33,13 +33,13 @@
         <div class="comment">
           <h4><span>{{ comment.name }} </span>{{ comment.date_added }}</h4>
           <p>{{ comment.body }}</p>
-        {% empty %}
+      {% empty %}
           <p>Pas de commentaire</p>
         </div>
       {% endfor %}
 
       <div class="box-form">
-        <form action="">
+        <form action="" method="POST">
           {% csrf_token %}
 
           {{ form.as_p }}
@@ -58,7 +58,7 @@
           <!-- <textarea class="inputtext" cols="200" rows="50"></textarea> -->
           <!-- </div> -->
 
-          <input type="submit" value="ajouter">
+          <button type="submit">ajouter</button>
         </form>
       </div>
     </section>

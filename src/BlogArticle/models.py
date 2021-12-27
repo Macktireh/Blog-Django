@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models.fields.related import ForeignKey
 
 
 class Blog(models.Model):
@@ -17,7 +18,7 @@ class Blog(models.Model):
 
 
 class Comment(models.Model):
-	post = models.ForeignKey(Blog, related_name='comments', on_delete=models.CASCADE)
+	post = ForeignKey(Blog, related_name='comments', on_delete=models.CASCADE)
 	name = models.CharField(max_length=128, default='inconnu')
 	email = models.EmailField()
 	body = models.TextField()

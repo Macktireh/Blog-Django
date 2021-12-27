@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from .models import Blog, Comment
 from .forms import Blogform
@@ -28,7 +28,7 @@ def article(request, slug):
 	context = {
 		'article': article,
 		'comments': comments,
-		'form': form
+		'form': form,
 		}
 
 	return render(request, doc, context)

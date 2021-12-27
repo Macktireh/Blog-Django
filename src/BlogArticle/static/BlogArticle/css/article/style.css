@@ -69,14 +69,14 @@ h5 {
   padding: 0.8rem;
 }
 
-.box-form {
+/*.box-form {
   width: 100%;
   margin: 0 auto;
   margin-top: 0.5rem;
   border-radius: 4px;
   box-shadow: 0 0 2px var(--color5);
-}
-
+}*/
+/*
 form {
   display: grid;
   grid-template-columns: auto auto;
@@ -126,4 +126,4 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
   background-color: var(--color3);
-}
+}*/
