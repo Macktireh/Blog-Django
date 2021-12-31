@@ -12,7 +12,7 @@ class BlogAdmin(admin.ModelAdmin):
 
 
 class CommentAdmin(admin.ModelAdmin):
-	list_display = ('name', 'email', 'body', 'date_added')
+	list_display = ('name', 'email', 'body', 'post', 'date_added')
 	search_fields = ('name', 'email',)
 
 admin.site.register(Blog, BlogAdmin)
