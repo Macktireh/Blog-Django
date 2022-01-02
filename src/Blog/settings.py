@@ -145,6 +145,7 @@ CKEDITOR_UPLOAD_PATH = "/media/"
 
 CKEDITOR_CONFIGS = {
     'default': {
+        'extraPlugins': 'codesnippet',
         'toolbar': 'full',
-    }
+    },
 }
